@@ -4,8 +4,8 @@
 
 #include <nonstd/span.hpp>
 #include <range/v3/view/zip.hpp>
-#include <xtensor/xtensor.hpp>
-#include <xtensor/xview.hpp>
+#include <xtensor/containers/xtensor.hpp>
+#include <xtensor/views/xview.hpp>
 
 #include "ecole/observation/pseudocosts.hpp"
 #include "ecole/scip/model.hpp"

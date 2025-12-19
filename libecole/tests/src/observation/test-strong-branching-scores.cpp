@@ -1,6 +1,6 @@
 #include <catch2/catch.hpp>
-#include <xtensor/xindex_view.hpp>
-#include <xtensor/xmath.hpp>
+#include <xtensor/views/xindex_view.hpp>
+#include <xtensor/core/xmath.hpp>
 
 #include "ecole/observation/strong-branching-scores.hpp"
 

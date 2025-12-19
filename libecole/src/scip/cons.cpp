@@ -1,10 +1,11 @@
 #include <cmath>
 #include <fmt/format.h>
 #include <stdexcept>
-#include <xtensor/xadapt.hpp>
-#include <xtensor/xnorm.hpp>
-#include <xtensor/xtensor.hpp>
-#include <xtensor/xview.hpp>
+
+#include <xtensor/reducers/xnorm.hpp>
+#include <xtensor/containers/xadapt.hpp>
+#include <xtensor/containers/xtensor.hpp>
+#include <xtensor/views/xview.hpp>
 
 #include "ecole/scip/cons.hpp"
 #include "ecole/utility/sparse-matrix.hpp"

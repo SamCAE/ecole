@@ -9,8 +9,8 @@
 #include <range/v3/view/filter.hpp>
 #include <range/v3/view/transform.hpp>
 #include <range/v3/view/zip.hpp>
-#include <xtensor/xfixed.hpp>
-#include <xtensor/xview.hpp>
+#include <xtensor/containers/xfixed.hpp>
+#include <xtensor/views/xview.hpp>
 
 #include "ecole/observation/khalil-2016.hpp"
 #include "ecole/scip/col.hpp"

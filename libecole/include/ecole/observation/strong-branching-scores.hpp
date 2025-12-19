@@ -3,8 +3,8 @@
 #include <memory>
 #include <optional>
 
-#include <xtensor/xtensor.hpp>
-#include <xtensor/xview.hpp>
+#include <xtensor/containers/xtensor.hpp>
+#include <xtensor/views/xview.hpp>
 
 #include "ecole/export.hpp"
 #include "ecole/observation/abstract.hpp"

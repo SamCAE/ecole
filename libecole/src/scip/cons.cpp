@@ -213,8 +213,11 @@ auto get_constraint_linear_coefs(SCIP* const scip, SCIP_CONS* const constraint) 
 			&n_constraint_variables,
 			static_cast<int>(buffer_size),
 			&constant_offset,
-			&requiredsize,
-			true);
+			&requiredsize
+#if SCIP_VERSION_MAJOR < 10
+			 , true
+#endif
+			);
 	}
 
 	variables.resize(static_cast<std::size_t>(n_constraint_variables));

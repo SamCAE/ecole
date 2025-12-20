@@ -177,3 +177,5 @@ dmypy.json
 
 # Scikit-build build folder
 _skbuild/
+
+.pixi/

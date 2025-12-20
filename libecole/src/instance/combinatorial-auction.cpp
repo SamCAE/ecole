@@ -6,12 +6,12 @@
 
 #include <fmt/format.h>
 
-#include <xtensor/xadapt.hpp>
-#include <xtensor/xindex_view.hpp>
-#include <xtensor/xrandom.hpp>
-#include <xtensor/xsort.hpp>
-#include <xtensor/xtensor.hpp>
-#include <xtensor/xview.hpp>
+#include <xtensor/containers/xadapt.hpp>
+#include <xtensor/views/xindex_view.hpp>
+#include <xtensor/generators/xrandom.hpp>
+#include <xtensor/misc/xsort.hpp>
+#include <xtensor/containers/xtensor.hpp>
+#include <xtensor/views/xview.hpp>
 
 #include "ecole/instance/combinatorial-auction.hpp"
 #include "ecole/scip/cons.hpp"
@@ -59,7 +59,7 @@ public:
 
 	template <typename T> void log(T&& message) {
 		if (print) {
-			fmt::print(pattern, std::forward<T>(message));
+			fmt::print(fmt::runtime(pattern), std::forward<T>(message));
 		}
 	}
 

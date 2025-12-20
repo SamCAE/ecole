@@ -75,10 +75,16 @@ add_custom_target(
 )
 add_dependencies(ecole-py-ext ecole-py-files)
 
-# Scikit build relies on an installation of the Python module to find the library.
-# Set through the setup.py script.
+# scikit-build-core relies on an installation of the Python module to find the library.
 if(SKBUILD)
-	# Rpath for the Ecole Python extension module
+	# Set default RPATH for the Ecole Python extension module if not provided
+	if(NOT DEFINED ECOLE_PY_EXT_INSTALL_RPATH)
+		if(APPLE)
+			set(ECOLE_PY_EXT_INSTALL_RPATH "@loader_path/lib")
+		else()
+			set(ECOLE_PY_EXT_INSTALL_RPATH "\$ORIGIN/lib")
+		endif()
+	endif()
 	set_target_properties(
 		ecole-py-ext
 		PROPERTIES

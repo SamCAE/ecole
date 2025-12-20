@@ -1,10 +1,11 @@
 #include <cmath>
 #include <fmt/format.h>
 #include <stdexcept>
-#include <xtensor/xadapt.hpp>
-#include <xtensor/xnorm.hpp>
-#include <xtensor/xtensor.hpp>
-#include <xtensor/xview.hpp>
+
+#include <xtensor/reducers/xnorm.hpp>
+#include <xtensor/containers/xadapt.hpp>
+#include <xtensor/containers/xtensor.hpp>
+#include <xtensor/views/xview.hpp>
 
 #include "ecole/scip/cons.hpp"
 #include "ecole/utility/sparse-matrix.hpp"
@@ -212,8 +213,11 @@ auto get_constraint_linear_coefs(SCIP* const scip, SCIP_CONS* const constraint) 
 			&n_constraint_variables,
 			static_cast<int>(buffer_size),
 			&constant_offset,
-			&requiredsize,
-			true);
+			&requiredsize
+#if SCIP_VERSION_MAJOR < 10
+			 , true
+#endif
+			);
 	}
 
 	variables.resize(static_cast<std::size_t>(n_constraint_variables));

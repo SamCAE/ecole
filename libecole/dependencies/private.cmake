@@ -1,7 +1,7 @@
 find_or_download_package(
 	NAME range-v3
-	URL https://github.com/ericniebler/range-v3/archive/0.11.0.tar.gz
-	URL_HASH SHA256=376376615dbba43d3bef75aa590931431ecb49eb36d07bb726a19f680c75e20c
+	URL https://github.com/ericniebler/range-v3/archive/0.12.0.tar.gz
+	URL_HASH SHA256=015adb2300a98edfceaf0725beec3337f542af4915cec4d0b89fa0886f4ba9cb
 	CONFIGURE_ARGS
 		-D RANGE_V3_TESTS=OFF
 		-D RANGE_V3_EXAMPLES=OFF
@@ -11,8 +11,8 @@ find_or_download_package(
 
 find_or_download_package(
 	NAME fmt
-	URL https://github.com/fmtlib/fmt/archive/8.0.1.tar.gz
-	URL_HASH SHA256=b06ca3130158c625848f3fb7418f235155a4d389b2abc3a6245fb01cb0eb1e01
+	URL https://github.com/fmtlib/fmt/archive/12.0.0.tar.gz
+	URL_HASH SHA256=aa3e8fbb6a0066c03454434add1f1fc23299e85758ceec0d7d2d974431481e40
 	CONFIGURE_ARGS
 		-D FMT_TEST=OFF
 		-D FMT_DOC=OFF
@@ -24,7 +24,7 @@ find_or_download_package(
 
 find_or_download_package(
 	NAME robin_hood
-	URL https://github.com/martinus/robin-hood-hashing/archive/refs/tags/3.11.2.tar.gz
-	URL_HASH SHA256=148b4fbd4fbb30ba10cc97143dcbe385078801b9c9e329cd477c1ea27477cb73
+	URL https://github.com/martinus/robin-hood-hashing/archive/refs/tags/3.11.5.tar.gz
+	URL_HASH SHA256=3693e44dda569e9a8b87ce8263f7477b23af448a3c3600c8ab9004fe79c20ad0
 	CONFIGURE_ARGS -D RH_STANDALONE_PROJECT=OFF
 )

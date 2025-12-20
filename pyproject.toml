@@ -8,7 +8,7 @@ build-backend = "scikit_build_core.build"
 
 [project]
 name = "ecole"
-version = "0.8.1"
+dynamic = ["version"]
 description = "Extensible Combinatorial Optimization Learning Environments"
 readme = "README.rst"
 license = "BSD-3-Clause"
@@ -41,6 +41,19 @@ CMAKE_INSTALL_LIBDIR = "lib"
 CMAKE_INSTALL_BINDIR = "bin"
 CMAKE_INSTALL_INCLUDEDIR = "include"
 ECOLE_PY_EXT_INSTALL_LIBDIR = "."
+
+[tool.scikit-build.metadata.version]
+provider = "scikit_build_core.metadata.regex"
+input = "VERSION"
+regex = '''(?sx)
+VERSION_MAJOR\s+(?P<major>\d+).*?
+VERSION_MINOR\s+(?P<minor>\d+).*?
+VERSION_PATCH\s+(?P<patch>\d+).*?
+VERSION_PRE\s+(?P<pre>[^\s\#]*).*?
+VERSION_POST\s+(?P<post>[^\s\#]*).*?
+VERSION_DEV\s+(?P<dev>[^\s\#]*)
+'''
+result = "{major}.{minor}.{patch}{pre}{post}{dev}"
 
 [tool.black]
 line-length = 100

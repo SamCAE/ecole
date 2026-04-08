@@ -3,6 +3,16 @@ cmake_minimum_required(VERSION 3.16)
 # Adapt compiler flags if using Conda compiler packages. Before project so they are not modified.
 include(cmake/Conda.cmake)
 
+# Make packages installed in the active conda environment discoverable by CMake and nested
+# dependency builds. SCIP's exported config depends on GMP, which is typically located in
+# the same prefix.
+if(DEFINED ENV{CONDA_PREFIX})
+	list(PREPEND CMAKE_PREFIX_PATH "$ENV{CONDA_PREFIX}")
+	if(NOT DEFINED GMP_DIR)
+		set(GMP_DIR "$ENV{CONDA_PREFIX}" CACHE PATH "Path to a GMP installation.")
+	endif()
+endif()
+
 # Read the version from file
 include(cmake/Version.cmake)
 read_version("VERSION" Ecole_VERSION)
